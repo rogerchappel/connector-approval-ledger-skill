@@ -1,0 +1,22 @@
+{
+  "name": "connector-approval-ledger-skill",
+  "version": "0.1.0",
+  "description": "Maintain local approval ledgers for connector dry-run plans before external action execution.",
+  "type": "module",
+  "bin": {
+    "connector-approval-ledger": "src/cli.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node scripts/check.js",
+    "build": "node scripts/build.js",
+    "smoke": "bash scripts/validate.sh"
+  },
+  "keywords": [
+    "agent-skill",
+    "local-first",
+    "dry-run"
+  ],
+  "author": "Roger Chappel",
+  "license": "MIT"
+}
