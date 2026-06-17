@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-06-17T22:36:02.436Z",
+  "valid": true,
+  "results": [
+    {
+      "id": "plan-1",
+      "status": "approved",
+      "connector": "email",
+      "issues": []
+    },
+    {
+      "id": "plan-2",
+      "status": "proposed",
+      "connector": "crm",
+      "issues": []
+    }
+  ],
+  "counts": {
+    "approved": 1,
+    "proposed": 1
+  }
+}
