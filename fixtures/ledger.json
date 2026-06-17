@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "id": "plan-1",
+      "status": "approved",
+      "connector": "email",
+      "summary": "Send reviewed meeting recap draft",
+      "approvedBy": "roger",
+      "expiresAt": "2099-01-01T00:00:00Z"
+    },
+    {
+      "id": "plan-2",
+      "status": "proposed",
+      "connector": "crm",
+      "summary": "Prepare CRM update payload"
+    }
+  ]
+}
