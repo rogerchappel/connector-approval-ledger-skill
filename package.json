@@ -36,5 +36,9 @@
     "SECURITY.md",
     "CONTRIBUTING.md",
     "CHANGELOG.md"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/rogerchappel/connector-approval-ledger-skill/issues"
+  },
+  "homepage": "https://github.com/rogerchappel/connector-approval-ledger-skill#readme"
 }
