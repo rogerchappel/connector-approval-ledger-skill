@@ -16,6 +16,9 @@ node src/cli.js summarize --ledger fixtures/ledger.json
 node src/cli.js validate --ledger fixtures/ledger.json --out ledger-out
 ```
 
+The smoke check runs those commands against a temporary output directory and
+asserts that both `approval-audit.json` and `approval-summary.md` are written.
+
 ## Verify
 
 CI runs each release gate separately so failures point at the broken layer:
