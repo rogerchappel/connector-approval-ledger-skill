@@ -24,6 +24,7 @@ asserts that both `approval-audit.json` and `approval-summary.md` are written.
 CI runs each release gate separately so failures point at the broken layer:
 
 - `npm run check`
+- `npm run lint`
 - `npm run build`
 - `npm test`
 - `npm run smoke`
