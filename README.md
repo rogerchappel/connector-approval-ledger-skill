@@ -32,6 +32,10 @@ CI runs each release gate separately so failures point at the broken layer:
 
 Run `npm run release:check` locally before opening a release PR.
 
+`npm run package:smoke` fails if the npm tarball would omit the CLI, library
+API, fixtures, release-candidate docs, skill instructions, license, security
+policy, contribution guide, or changelog.
+
 ## Safety
 
 Local files only. No network calls, publishing, or external account writes. Generated outputs are review artifacts and require human approval before downstream action.
