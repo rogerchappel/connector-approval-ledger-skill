@@ -57,3 +57,11 @@ test('reports missing ledger arguments as usage errors', async () => {
   assert.equal(result.stdout, '');
   assert.match(result.stderr, /Missing --ledger/);
 });
+
+test('prints command usage for help', async () => {
+  const result = await runCli(['--help']);
+
+  assert.equal(result.code, 0);
+  assert.match(result.stdout, /connector-approval-ledger <validate\|summarize>/);
+  assert.equal(result.stderr, '');
+});
