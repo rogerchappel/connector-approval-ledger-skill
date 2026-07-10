@@ -65,3 +65,11 @@ test('prints command usage for help', async () => {
   assert.match(result.stdout, /connector-approval-ledger <validate\|summarize>/);
   assert.equal(result.stderr, '');
 });
+
+test('prints package version metadata', async () => {
+  const result = await runCli(['--version']);
+
+  assert.equal(result.code, 0);
+  assert.equal(result.stdout, '0.1.0\n');
+  assert.equal(result.stderr, '');
+});
