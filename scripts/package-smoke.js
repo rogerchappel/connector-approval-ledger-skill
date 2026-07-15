@@ -1,4 +1,5 @@
 import { execFileSync } from "node:child_process";
+import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 
 const output = execFileSync("npm", ["pack", "--dry-run", "--json"], {
@@ -19,6 +20,7 @@ const required = [
   "fixtures/expected/approval-audit.json",
   "fixtures/expected/approval-summary.md",
   "docs/API.md",
+  "docs/CLI.md",
   "docs/RELEASE_CANDIDATE.md",
   "SKILL.md",
   "README.md",
@@ -41,6 +43,20 @@ if (packageJson.bin?.["connector-approval-ledger"] !== "src/cli.js") {
 
 if (packageJson.engines?.node !== ">=20") {
   console.error("Package smoke failed: Node engine must document the node:test runtime baseline");
+  process.exit(1);
+}
+
+const unknownOption = spawnSync(process.execPath, [
+  packageJson.bin["connector-approval-ledger"],
+  "summarize",
+  "--ledger",
+  "fixtures/ledger.json",
+  "--format=json"
+], {
+  encoding: "utf8"
+});
+if (unknownOption.status !== 2 || !unknownOption.stderr.includes("Unknown option: --format=json")) {
+  console.error("Package smoke failed: connector-approval-ledger must reject unknown options with exit code 2");
   process.exit(1);
 }
 
