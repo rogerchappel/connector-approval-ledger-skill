@@ -19,6 +19,8 @@ node src/cli.js validate --ledger fixtures/ledger.json --out ledger-out
 
 The smoke check runs those commands against a temporary output directory and
 asserts that both `approval-audit.json` and `approval-summary.md` are written.
+Incomplete commands, unknown commands, and unknown options exit `2`; see
+[CLI behavior](docs/CLI.md) for the full automation contract.
 
 ## Verify
 
