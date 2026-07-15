@@ -58,6 +58,15 @@ test('reports missing ledger arguments as usage errors', async () => {
   assert.match(result.stderr, /Missing --ledger/);
 });
 
+test('rejects unknown CLI options', async () => {
+  const result = await runCli(['summarize', '--ledger', ledger, '--format=json']);
+
+  assert.equal(result.code, 2);
+  assert.equal(result.stdout, '');
+  assert.match(result.stderr, /Unknown option: --format=json/);
+  assert.match(result.stderr, /Usage: connector-approval-ledger/);
+});
+
 test('prints command usage for help', async () => {
   const result = await runCli(['--help']);
 
